@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="100.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculadoracorrigido.CalculadoraController">
+    <children>
+        <TitledPane alignment="CENTER" collapsible="false" contentDisplay="CENTER" prefHeight="105.0" prefWidth="600.0" text="Calculadora" wrapText="true">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+            <content>
+                <TextArea editable="false" prefHeight="225.0" prefWidth="598.0" />
+            </content>
+        </TitledPane>
+        <TextField fx:id="valor1TextField" layoutX="14.0" layoutY="50.0" prefHeight="30.0" prefWidth="71.0" AnchorPane.leftAnchor="14.0">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </TextField>
+        <TextField fx:id="valor2TextField" layoutX="253.0" layoutY="50.0" prefHeight="30.0" prefWidth="71.0">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </TextField>
+        <Button fx:id="calcularButton" layoutX="340.0" layoutY="50.0" mnemonicParsing="false" onAction="#operaçãoescolhida" prefHeight="30.0" text="Calcular">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="usarButton" layoutX="524.0" layoutY="50.0" mnemonicParsing="false" onAction="#botãoUsar" prefHeight="30.0" prefWidth="50.0" text="Usar">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Button>
+        <ComboBox fx:id="operaçõesComboBox" layoutX="93.0" layoutY="49.0" prefHeight="30.0" prefWidth="150.0" />
+        <TextField fx:id="resultadoTextField" editable="false" layoutX="413.0" layoutY="51.0" prefHeight="30.0" prefWidth="104.0" />
+    </children>
+</AnchorPane>
