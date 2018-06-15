@@ -22,12 +22,13 @@
                 <Font size="13.0" />
             </font>
         </TextField>
+        <ComboBox fx:id="operaçõesComboBox" layoutX="93.0" layoutY="49.0" prefHeight="30.0" prefWidth="150.0" />
         <TextField fx:id="valor2TextField" layoutX="253.0" layoutY="50.0" prefHeight="30.0" prefWidth="71.0">
             <font>
                 <Font size="13.0" />
             </font>
         </TextField>
-        <Button fx:id="calcularButton" layoutX="340.0" layoutY="50.0" mnemonicParsing="false" onAction="#operaçãoescolhida" prefHeight="30.0" text="Calcular">
+        <Button fx:id="calcularButton" layoutX="340.0" layoutY="50.0" mnemonicParsing="false" onAction="#operaçãoescolhida" onKeyPressed="#btn_KeyPressed" prefHeight="30.0" text="Calcular">
             <font>
                 <Font size="13.0" />
             </font>
@@ -37,7 +38,6 @@
                 <Font size="13.0" />
             </font>
         </Button>
-        <ComboBox fx:id="operaçõesComboBox" layoutX="93.0" layoutY="49.0" prefHeight="30.0" prefWidth="150.0" />
         <TextField fx:id="resultadoTextField" editable="false" layoutX="413.0" layoutY="51.0" prefHeight="30.0" prefWidth="104.0" />
     </children>
 </AnchorPane>
