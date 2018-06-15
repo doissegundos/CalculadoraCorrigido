@@ -12,6 +12,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import static javafx.scene.input.KeyCode.ENTER;
+import javafx.scene.input.KeyEvent;
 
 public class CalculadoraController implements Initializable {
 
@@ -46,8 +48,9 @@ public class CalculadoraController implements Initializable {
                 valor2TextField.setDisable(false);
             }
         });
+        operaçõesComboBox.getSelectionModel().selectFirst();
     }
-    
+
     /// Aqui cada operação receberá o seu nome e se é binaria(true) unaria(false)
     ///logo depois, será inserida no arraylist e no observableList
     public void comboBoxOperações() {
@@ -73,6 +76,19 @@ public class CalculadoraController implements Initializable {
         // adicionando ao observableList
         observableListOperações = FXCollections.observableArrayList(listaDeOperações);
         operaçõesComboBox.setItems(observableListOperações); ///aqui as operações são inseridas no combobox
+    }
+
+    /**
+     * Evento acionado quando uma tecla é pressionada
+     *
+     * @param e carrega informações relacionada a tecla pressionda
+     */
+    public void btn_KeyPressed(KeyEvent e) {
+        ///Condicionando a tecla ENTER
+        if (e.getCode() == ENTER) {
+            operaçãoescolhida();
+        }
+
     }
 
     @FXML
@@ -126,13 +142,13 @@ public class CalculadoraController implements Initializable {
                     resultadoTextField.setText(String.valueOf(resultado));
                     break;
             }
-        /// Se nenhuma operação for selecionada, o programa ao invés de travar,
-        /// perceberá o erro mas não fará nada
+            /// Se nenhuma operação for selecionada, o programa ao invés de travar,
+            /// perceberá o erro mas não fará nada
         } catch (Exception erro) {
 
         }
     }
-    
+
     /// Dando uma função ao botão "Usar"
     @FXML
     public void botãoUsar() {
@@ -140,13 +156,13 @@ public class CalculadoraController implements Initializable {
             String valorResultado;
             valorResultado = resultadoTextField.getText();
             valor1TextField.setText(valorResultado);
-        /// Se "valor1TextField" estiver vazio, o programa ao invés de travar,
-        /// perceberá o erro mas não fará nada
+            /// Se "valor1TextField" estiver vazio, o programa ao invés de travar,
+            /// perceberá o erro mas não fará nada
         } catch (Exception erro) {
 
         }
     }
-    
+
     /// Chamando a Classe Operações e retornando o resultado do getBinario()
     public boolean operaçãoBinaria() {
         Operações operações = operaçõesComboBox.getSelectionModel().getSelectedItem();
